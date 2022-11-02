@@ -60,21 +60,26 @@ router.put('/:id', (req, res) => {
   })
     .then((Category) => {
             return Category.findAll({ where: { category_id: req.params.id } });
-             const newCategoryIds = req.body.categoryIds
-        .filter((categoryId) => !categoryId.includes(categoryId))
-        .map((category_id) => {
+          })
+            const newCategoryIds = req.body.categoryIds
+        .filter((product_id) => !Category.includes(product_id))
+        .map((product_id) => {
           return {
             category_id: req.params.id,
+            product_id,
          
           };
         });     
-          })
+         // figure out which ones to remove
+      const categoryToRemove = Category
+      .filter(({ category_id }) => !req.body.category.includes(category_id))
+      .map(({ id }) => id);
     
  
       // run both actions
       return Promise.all([
         Category.destroy({ where: { id: categoryToRemove } }),
-        categoryId.bulkCreate(newCategoryIds),
+        Category.bulkCreate(newCategoryIds),
       ]);
     })
     .then((updatedCategoryIds) => res.json(updatedCategoryIds))
