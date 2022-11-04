@@ -57,11 +57,10 @@ THEN I am able to successfully create, update, and delete data in my database
   ## Usage
   
   - Open your Terminal (Application or VS code)
-  - Type node index.js then press enter
-  - Answer all the following prompts
-  - "Success!" is showing
-  - You generated your team.html file!
-  
+  - Type npm start then press enter
+  - Then, you can put your localhost ID on installed insomnia
+  - By using a specific api to GET, POST, PUT or DELETE your database
+    
 
   ## License
         This project use MIT license.
@@ -71,8 +70,8 @@ THEN I am able to successfully create, update, and delete data in my database
    Penelope Leung
 
   ## Testing
-  - Open the terminal 
-  - 
+  - insomnia
+
 
   ## Github
   [penelope-leung](https://github.com/penelope-leung)
